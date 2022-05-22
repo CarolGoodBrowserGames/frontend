@@ -1,0 +1,13 @@
+<div class="text-danger">
+    <p class="mt-2">Mais avaliados</p>
+    <div class="row">
+        <div *ngIf="!verificaLista()" class="col">
+            Sem jogos cadastrados para exibir.
+        </div>
+        <div *ngIf="verificaLista()" class="col-12 row">
+            <div *ngFor="let item of listaJogos" class="col-12">
+                <app-jogo [jogo]="item" class="row" (deleteRequest)="getListaJogos()" [relatorio]="true"></app-jogo>
+            </div>
+        </div>
+    </div>
+</div>
