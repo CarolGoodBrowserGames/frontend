@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ValidService } from 'src/app/core/valid/valid.service';
 import { Usuario } from 'src/app/models/usuario/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private usuarioService: UsuarioService,
-    private validService: ValidService
+    private validService: ValidService,
+    private toastr: ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -41,11 +43,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['']);
           this.logando = true;
         } else {
-          alert('Email ou senhas inválidos.');
+          this.toastr.error('Email ou senhas inválidos.')
           this.logando = true;
         }
       }, (error) => {
-        alert('Email ou senhas inválidos.');
+        this.toastr.error('Email ou senhas inválidos.')
         console.log(error); 
       }
     )

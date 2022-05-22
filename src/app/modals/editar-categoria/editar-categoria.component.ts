@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { ValidService } from 'src/app/core/valid/valid.service';
 import { CategoriaService } from 'src/app/services/categoria/categoria.service';
 
@@ -16,6 +17,7 @@ export class EditarCategoriaComponent implements OnInit {
   constructor(
     public activeModal: NgbActiveModal,
     private categoriaService: CategoriaService,
+    private toastr: ToastrService
     ) { }
 
   ngOnInit(): void {
@@ -37,12 +39,13 @@ export class EditarCategoriaComponent implements OnInit {
     this.categoriaService.editarCategoria(this.categoria).subscribe(
       (result) => {
         if (result) {
-          alert('Categoria salva com sucesso.');
+          this.toastr.success('Categoria salva com sucesso.');
           this.activeModal.close();
         }        
         this.atualizando = true;
       }, (error) => {
         this.atualizando = true;
+        this.toastr.error('Erro ao salvar categoria.');
         console.log(error);        
       }
     )

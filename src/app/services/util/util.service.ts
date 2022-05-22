@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UtilService {
-  urlServer = "https://good-browser-games-lucas.herokuapp.com/goodbrowsergames/util/";
+  urlServer = "https://carol-goodbrowsergames.herokuapp.com/goodbrowsergames/util/";
 
   constructor(private http: HttpClient) { }
 

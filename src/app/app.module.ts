@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,8 @@ import { VerAvaliacoesComponent } from './pages/ver-avaliacoes/ver-avaliacoes.co
 import { JogoAvaliacaoComponent } from './components/jogo-avaliacao/jogo-avaliacao.component';
 import { JogosMaisAvaliadosComponent } from './pages/jogos-mais-avaliados/jogos-mais-avaliados.component';
 import { EditarCategoriaComponent } from './modals/editar-categoria/editar-categoria.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +64,8 @@ import { EditarCategoriaComponent } from './modals/editar-categoria/editar-categ
     FormsModule,
     HttpClientModule,
     NgbModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

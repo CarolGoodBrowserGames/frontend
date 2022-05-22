@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { EditarJogoComponent } from 'src/app/modals/editar-jogo/editar-jogo.component';
 import { AvaliacaoService } from 'src/app/services/avaliacao/avaliacao.service';
@@ -27,7 +28,8 @@ export class JogoComponent implements OnInit {
     private avaliacaoService: AvaliacaoService,
     private authService: AuthGuard,
     private usuarioService: UsuarioService,
-    private utilService: UtilService
+    private utilService: UtilService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -116,13 +118,13 @@ export class JogoComponent implements OnInit {
       (result) => {
         console.log(result);
         if (result) {
-          alert('Removido com sucesso.')
+          this.toastr.success('Removido com sucesso.')
           this.deleteRequest.emit();
         } else {
-          alert('Erro ao remover o jogo.')
+          this.toastr.error('Erro ao remover o jogo.')
         }
       }, (error) => {
-        alert('Erro ao remover o jogo.')
+        this.toastr.error('Erro ao remover o jogo.')
         console.log(error);
       }
     )

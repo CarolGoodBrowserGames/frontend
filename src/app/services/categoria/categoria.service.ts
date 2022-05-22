@@ -9,7 +9,7 @@ import { Categoria } from 'src/app/models/categoria/categoria.model';
 export class CategoriaService {
   
 
-  urlServer = "https://good-browser-games-lucas.herokuapp.com/goodbrowsergames/categoria/";
+  urlServer = "https://carol-goodbrowsergames.herokuapp.com/goodbrowsergames/categoria/";
 
   constructor(private http: HttpClient) { }
 

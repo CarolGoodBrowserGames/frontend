@@ -8,7 +8,7 @@ import { Jogo } from 'src/app/models/jogo/jogo.model';
 })
 export class JogoService {
 
-  urlServer = "https://good-browser-games-lucas.herokuapp.com/goodbrowsergames/jogo/";
+  urlServer = "https://carol-goodbrowsergames.herokuapp.com/goodbrowsergames/jogo/";
 
   constructor(private http: HttpClient) { }
 

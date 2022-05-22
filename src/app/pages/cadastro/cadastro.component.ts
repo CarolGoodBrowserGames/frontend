@@ -4,6 +4,7 @@ import { ValidService } from 'src/app/core/valid/valid.service';
 import { Usuario } from 'src/app/models/usuario/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cadastro',
@@ -30,7 +31,9 @@ export class CadastroComponent implements OnInit {
     private usuarioService: UsuarioService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private validService: ValidService) { }
+    private validService: ValidService,    
+    private toastr: ToastrService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -48,7 +51,7 @@ export class CadastroComponent implements OnInit {
           this.router.navigate(['login']);
           this.cadastrando = true;
         } else {
-          alert('Email já em uso.');
+          this.toastr.error('Email já está sendo utilizado.');
           this.cadastrando = true;
         }
       }

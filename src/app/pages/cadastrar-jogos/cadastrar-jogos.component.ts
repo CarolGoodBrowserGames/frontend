@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { ValidService } from 'src/app/core/valid/valid.service';
 import { Categoria } from 'src/app/models/categoria/categoria.model';
@@ -36,6 +37,7 @@ export class CadastrarJogosComponent implements OnInit {
     private categoriaService: CategoriaService,
     private usuarioService: UsuarioService,
     private authService: AuthGuard,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {    
@@ -96,7 +98,7 @@ export class CadastrarJogosComponent implements OnInit {
         this.triggerCadastroJogo(_jogo);
         
       }, (error) => {
-        alert('Erro ao salvar categoria.')
+        this.toastr.error('Erro ao salvar categoria.')
         console.log(error);        
       }
     )
@@ -108,11 +110,11 @@ export class CadastrarJogosComponent implements OnInit {
         if (this.selectedFile) {
           this.onUpload(result)
         }
-        alert("Salvo com sucesso.")
+        this.toastr.success("Salvo com sucesso.")
         this.triggerAtualizaUsuario(result.id);
         this.resetaObjetos();
       }, (error) => {
-        alert('Erro ao salvar jogo.')
+        this.toastr.error('Erro ao salvar jogo.')
         console.log(error);
       }
     )
@@ -125,7 +127,7 @@ export class CadastrarJogosComponent implements OnInit {
       (result)=> {
         console.log(result);        
       }, (error) => {
-        alert('Erro ao adicionar jogo.')
+        this.toastr.error('Erro ao adicionar jogo.')
         console.log(error);        
       }
     ) 

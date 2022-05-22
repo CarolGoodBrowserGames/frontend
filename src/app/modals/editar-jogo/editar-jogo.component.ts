@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { ValidService } from 'src/app/core/valid/valid.service';
 import { Categoria } from 'src/app/models/categoria/categoria.model';
@@ -32,6 +33,7 @@ export class EditarJogoComponent implements OnInit {
     private usuarioService: UsuarioService,
     private authService: AuthGuard,
     private _sanitizer: DomSanitizer,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -150,7 +152,7 @@ export class EditarJogoComponent implements OnInit {
         this.triggerAtualizarJogo(_jogo);
 
       }, (error) => {
-        alert('Erro ao salvar categoria.')
+        this.toastr.error('Erro ao salvar categoria.')
         console.log(error);
       }
     )
@@ -172,10 +174,10 @@ export class EditarJogoComponent implements OnInit {
         if (this.selectedFile) {
           this.onUpload(result, this.uploadData)
         }
-        alert("Salvo com sucesso.")
+        this.toastr.success("Salvo com sucesso.")
         this.close(this.jogo);
       }, (error) => {
-        alert('Erro ao salvar jogo.')
+        this.toastr.error('Erro ao salvar jogo.')
         console.log(error);
       }
     )
@@ -188,7 +190,7 @@ export class EditarJogoComponent implements OnInit {
       (result) => {
         //console.log(result);      
       }, (error) => {
-        alert('Erro ao salvar imagem.')
+        this.toastr.error('Erro ao salvar imagem.')
         console.log(error);
       }
     )

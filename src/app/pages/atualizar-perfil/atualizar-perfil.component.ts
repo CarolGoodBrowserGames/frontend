@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { DateService } from 'src/app/core/date/date.service';
 import { ValidService } from 'src/app/core/valid/valid.service';
@@ -29,7 +30,8 @@ export class AtualizarPerfilComponent implements OnInit {
     private dateService: DateService,
     private usuarioService: UsuarioService,
     private router: Router,
-    private validService: ValidService
+    private validService: ValidService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -57,7 +59,7 @@ export class AtualizarPerfilComponent implements OnInit {
         if (result) {
           localStorage.setItem('usuario', JSON.stringify(result))
           //this._usuario = result;  
-          alert('Salvo com sucesso.')
+          this.toastr.success('Salvo com sucesso.')
         }
       }, (error) => {
         console.log(error);        
