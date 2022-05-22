@@ -1,4 +1,4 @@
-<div class="card  border-danger">
+<div class="card">
     <div class="card-body row">
         <div class="col-4">            
             <img [src]="imageUrl" class="card-img-top" [alt]="jogo.nome">
@@ -6,7 +6,7 @@
         <div class="col-8">
             <h5 class="card-title">{{jogo.nome}}</h5>
             <div class="my-2">
-                <a role="button" class="btn btn-outline-danger" [routerLink]="['/avaliacao/'+jogo.id]">Ver outras
+                <a role="button" class="btn btn-outline-dark" [routerLink]="['/avaliacao/'+jogo.id]">Ver outras
                     avaliações de {{jogo.nome}}</a>
             </div>
             <p class="card-text">{{jogo.descricao}}</p>
@@ -29,7 +29,7 @@
                 </label>
             </div>
             <div *ngIf="usuario.ehAdmin && relatorio === false">
-                <button type="button" class="btn btn-outline-danger mr-1" (click)="openModalEditar(jogo)">Editar</button>
+                <button type="button" class="btn btn-outline-dark mr-1" (click)="openModalEditar(jogo)">Editar</button>
                 <button type="button" class="btn btn-danger m-1" (click)="deletarJogo(jogo)">Deletar</button>
             </div>
         </div>        

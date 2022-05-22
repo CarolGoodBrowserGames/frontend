@@ -1,10 +1,12 @@
 <div class="card m-2">
-    <div class="card-body text-danger">
+    <div class="card-body ">
         <h5 class="card-title">Categorias</h5>
+        <p role="button" style="cursor: pointer;" class="text-info pb-1" routerLink="/jogo-read-recommend">Ver jogos
+            recomendados</p>
         <div class="row">
-            <div *ngFor="let item of listaCategorias" class="mx-2">
+            <ul *ngFor="let item of listaCategorias" class="list-group mx-2 col-12">
                 <app-categoria [categoria]="item" (click)="openModal(item)"></app-categoria>
-            </div>
+            </ul>
         </div>
     </div>
 </div>
