@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthGuard } from 'src/app/core/auth/auth.guard';
+import { DateService } from 'src/app/core/date/date.service';
+import { Usuario } from 'src/app/models/usuario/usuario.model';
 import { AvaliacaoService } from 'src/app/services/avaliacao/avaliacao.service';
 import { JogoService } from 'src/app/services/jogo/jogo.service';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
@@ -18,7 +21,20 @@ export class VerAvaliacoesComponent implements OnInit {
     usuario: {}
   }
 
+  usuario: Usuario = {
+    nome: '',
+    userName: '',
+    senha: '',
+    dataNascimento: '',
+    estado: '',
+    pais: '',
+    email: '',
+    ehAdmin: 'false'
+  };
+
   constructor(
+    private authGuard: AuthGuard,
+    private dateService: DateService,
     private router: ActivatedRoute,
     private avaliacaoService: AvaliacaoService,
   ) { }
@@ -32,6 +48,8 @@ export class VerAvaliacoesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.usuario  = this.authGuard.getUsuario();  
+    this.usuario.dataNascimento = this.dateService.formatarDataComBarra(this.usuario.dataNascimento)
   }
 
   listarPorIdJogo() {

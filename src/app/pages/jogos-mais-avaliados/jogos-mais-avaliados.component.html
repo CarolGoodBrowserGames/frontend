@@ -1,16 +1,39 @@
-<div class="card m-2">
-    <div class="card-body ">
-        <h5 class="card-title">Avaliações mais úteis</h5>
-        <div class="row">
-            <div *ngIf="!verificaLista()" class="col">
-                
-            </div>
-            <div *ngIf="verificaLista()" class="col-12 row">
-                <div *ngFor="let item of listaJogos" class="col-12">
-                    <app-jogo-avaliacao [usuarioCodigo]="item.usuarioCodigo" [jogoCodigo]="item.jogoCodigo"
-                         [relatorio]="true"></app-jogo-avaliacao>
+<div class="row">
+    <div class="col-8">
+        <div class="card m-2">
+            <div class="card-body ">
+                <h5 class="card-title">Avaliações mais úteis</h5>
+                <div class="row">
+                    <div *ngIf="!verificaLista()" class="col">
+                        
+                    </div>
+                    <div *ngIf="verificaLista()" class="col-12 row">
+                        <div *ngFor="let item of listaJogos" class="col-12">
+                            <app-jogo-avaliacao [usuarioCodigo]="item.usuarioCodigo" [jogoCodigo]="item.jogoCodigo"
+                                 [relatorio]="true"></app-jogo-avaliacao>
+                        </div>
+                    </div>            
                 </div>
-            </div>            
+            </div>
+        </div>    
+    </div>
+    <div class="col-4">
+        <div class="card m-2">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 ">
+                        <p><b>{{usuario.userName}}</b></p>
+                        <p>{{usuario.nome}}</p>
+                        <p>{{usuario.dataNascimento}} • {{usuario.estado}} - {{usuario.pais}}</p>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <div>
+                            <span class="text-info my-1" style="cursor: pointer;" routerLink="/perfil-update">Mudar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <app-listar-categorias></app-listar-categorias>
     </div>
 </div>
