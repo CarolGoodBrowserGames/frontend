@@ -7,13 +7,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-6 ">
-                        <p><b>@{{usuario.userName}}</b></p>
+                        <p><b>{{usuario.userName}}</b></p>
                         <p>{{usuario.nome}}</p>
                         <p>{{usuario.dataNascimento}} • {{usuario.estado}} - {{usuario.pais}}</p>
                     </div>
                     <div class="col-6 d-flex justify-content-end">
                         <div>
-                            <a class="btn btn-dark my-1" routerLink="/perfil-update">Atualizar meu perfil</a>
+                            <span class="text-info my-1" style="cursor: pointer;" routerLink="/perfil-update">Mudar</span>
                         </div>
                     </div>
                 </div>
