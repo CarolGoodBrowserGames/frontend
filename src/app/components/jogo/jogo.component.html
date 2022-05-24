@@ -16,7 +16,7 @@
                 </h1>
             </div>
             <div class="col d-flex justify-content-end">
-                <div *ngIf="usuario.ehAdmin && relatorio === false">
+                <div *ngIf="usuario.ehAdmin === 'false' && relatorio === false">
                     <button type="button" class="btn btn-outline-info mr-1"
                         (click)="openModalEditar(jogo)">Editar</button>
                     <button type="button" class="btn btn-danger m-1" (click)="deletarJogo(jogo)">Excluir</button>
