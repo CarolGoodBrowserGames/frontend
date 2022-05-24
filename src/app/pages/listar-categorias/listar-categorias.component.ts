@@ -33,7 +33,7 @@ export class ListarCategoriasComponent implements OnInit {
   }
 
   openModal(item: any) {
-    if (this.usuario.ehAdmin) {
+    if (this.usuario.ehAdmin === 'true') {
       const modalRef = this.modalService.open(EditarCategoriaComponent, {
         backdrop: "static",
         keyboard: true,

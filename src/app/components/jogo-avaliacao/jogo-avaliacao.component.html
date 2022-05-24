@@ -6,6 +6,18 @@
         <img [src]="imageUrl" class="card-img-top" [alt]="jogo.nome">
         <div class="row">
             <div class="col">
+                <h1 class="text-primary">
+                    <ngb-rating [max]="5" [(rate)]="jogo.nota" [readonly]="relatorio" (rateChange)="avaliacao($event)">
+                        <ng-template let-fill="fill" let-index="index">
+                            <span class="star" [class.filled]="fill === 100"
+                                [class.bad]="index < indexado()">&hearts;</span>
+                        </ng-template>
+                    </ngb-rating>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <div class="row">
                     <div class="col">
                         <p class="card-text my-3"><b>{{usuario.userName}}</b> {{jogo.nome}}</p>
@@ -21,8 +33,7 @@
 
 
                 <p class="card-text">{{jogo.descricao}}</p>
-                <p class="card-text">Link: <a href="{{jogo.urlJogo}}" target="_blank">{{jogo.urlJogo}}</a></p>
-                
+                <p class="card-text">Link: <a href="{{jogo.urlJogo}}" target="_blank">{{jogo.urlJogo}}</a></p>                
             </div>
         </div>
     </div>
