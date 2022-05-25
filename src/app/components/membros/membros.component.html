@@ -1,0 +1,23 @@
+<div class="">
+    <div class="card my-2">
+        <div class="card-body row">
+            <div class="col-3">
+                <span class="avatar avatar-lg rounded-circle">
+                    <span 
+                        style="font-weight: bold; text-transform: uppercase;">{{posicao}}</span>
+                </span>
+            </div>
+            <div class="col-9">
+                <p><b>Nome: </b>{{membro.nome}}</p>
+                <p><b>Nome do usuário: </b>{{membro.userName}}</p>
+                <p><b>Data nascimento: </b>{{membro.dataNascimento}}</p>
+                <p><b>Localização: </b>{{membro.pais}} - {{membro.estado}}</p>
+                <p><b>Email de contato: </b>{{membro.email}}</p>
+                <p><b>Quantidade de jogos avaliados: </b>{{((membro.qtdJogosAvaliados === null ? 0 :
+                    membro.qtdJogosAvaliados) )}}</p>
+            </div>
+        </div>
+
+
+    </div>
+</div>

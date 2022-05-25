@@ -1,8 +1,9 @@
 <div class="">
-    <p class="mt-2">Piores avaliados</p>
+    <p class="mt-2">Mais avaliações</p>
+
     <div class="row">
         <div *ngIf="!verificaLista()" class="col">
-            Sem jogos para exibir.
+            Nenhum jogo cadastrado.
         </div>
         <div *ngIf="verificaLista()" class="col-12 row">
             <div *ngFor="let item of listaJogos" class="col-12">

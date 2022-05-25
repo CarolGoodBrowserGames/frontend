@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
     pais: '',
     email: '',
     ehAdmin: 'false',
+    qtdJogosAvaliados: 0
   };
 
   constructor(

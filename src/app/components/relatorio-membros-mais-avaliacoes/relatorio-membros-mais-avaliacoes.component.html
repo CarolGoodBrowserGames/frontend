@@ -1,0 +1,11 @@
+<div class="">
+    <p class="mt-2">Membros com mais avaliações</p>
+
+    <div class="row">
+        <div *ngIf="verificaLista()" class="col-12 row">
+            <div *ngFor="let item of lista; let i = index" class="col-12">
+                <app-membros [membro]="item" [posicao]="i"></app-membros>
+            </div>
+        </div>
+    </div>
+</div>

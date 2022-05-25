@@ -31,6 +31,10 @@ import { JogosMaisAvaliadosComponent } from './pages/jogos-mais-avaliados/jogos-
 import { EditarCategoriaComponent } from './modals/editar-categoria/editar-categoria.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
+import { RelatorioMaioresAvaliacaoComponent } from './components/relatorio-maiores-avaliacao/relatorio-maiores-avaliacao.component';
+import { RelatorioMembrosMaisAvaliacoesComponent } from './components/relatorio-membros-mais-avaliacoes/relatorio-membros-mais-avaliacoes.component';
+import { MembrosComponent } from './components/membros/membros.component';
+import { RelatorioCategoriasMaisAvaliadasComponent } from './components/relatorio-categorias-mais-avaliadas/relatorio-categorias-mais-avaliadas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +61,10 @@ import { BrowserModule } from '@angular/platform-browser';
     JogoAvaliacaoComponent,
     JogosMaisAvaliadosComponent,
     EditarCategoriaComponent,
+    RelatorioMaioresAvaliacaoComponent,
+    RelatorioMembrosMaisAvaliacoesComponent,
+    MembrosComponent,
+    RelatorioCategoriasMaisAvaliadasComponent,
   ],
   imports: [
     BrowserModule,

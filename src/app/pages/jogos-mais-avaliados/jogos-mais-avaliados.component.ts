@@ -21,7 +21,8 @@ export class JogosMaisAvaliadosComponent implements OnInit {
     estado: '',
     pais: '',
     email: '',
-    ehAdmin: 'false'
+    ehAdmin: 'false',
+    qtdJogosAvaliados: 0
   };
 
   constructor(

@@ -29,7 +29,8 @@ export class VerAvaliacoesComponent implements OnInit {
     estado: '',
     pais: '',
     email: '',
-    ehAdmin: 'false'
+    ehAdmin: 'false',
+    qtdJogosAvaliados: 0
   };
 
   constructor(

@@ -3,7 +3,7 @@
         <h5 class="card-title">Jogos recomendados</h5>
         <div class="row">
             <div *ngIf="!verificaLista()" class="col">
-                Para o algoritmo funcionar o usuário deve avaliar dois ou mais jogos da mesma categoria.
+                Para o algoritmo funcionar é necessário avaliar dois ou mais jogos da mesma categoria.
             </div>
             <div  *ngIf="verificaLista()"  class="col-12 row">
                 <div *ngFor="let item of listaJogos" class="col-12">

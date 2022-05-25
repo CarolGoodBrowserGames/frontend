@@ -3,7 +3,7 @@
 
     <div class="row">
         <div *ngIf="!verificaLista()" class="col">
-            Sem jogos cadastrados para exibir.
+            Nenhum jogo avaliado mais de 4 vezes.
         </div>
         <div *ngIf="verificaLista()" class="col-12 row">
             <div *ngFor="let item of listaJogos" class="col-12">

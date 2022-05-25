@@ -23,6 +23,7 @@ export class AtualizarPerfilComponent implements OnInit {
     pais: '',
     email: '',
     ehAdmin: '',
+    qtdJogosAvaliados: 0,
   };
 
   constructor(

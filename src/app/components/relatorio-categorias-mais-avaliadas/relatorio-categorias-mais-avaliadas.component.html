@@ -4,7 +4,7 @@
         
         <div class="row">
             <ul *ngFor="let item of listaCategorias" class="list-group mx-2 col-12">
-                <app-categoria [categoria]="item" (click)="openModal(item)"></app-categoria>
+                <app-categoria [categoria]="item" [relatorio]="true"></app-categoria>
             </ul>
         </div>
     </div>

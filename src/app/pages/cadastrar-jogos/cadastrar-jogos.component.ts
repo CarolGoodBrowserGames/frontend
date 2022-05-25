@@ -26,6 +26,7 @@ export class CadastrarJogosComponent implements OnInit {
 
   categoria: Categoria = {
     nome: '',
+    qtdCategoriaAvaliada: 0
   }
 
   public selectedFile: any;
@@ -143,7 +144,8 @@ export class CadastrarJogosComponent implements OnInit {
       qtdDeAvaliacao: 0
     }
     this.categoria = {
-      nome: ''
+      nome: '',
+      qtdCategoriaAvaliada: 0,
     }
   }
 

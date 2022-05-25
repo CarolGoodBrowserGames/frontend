@@ -9,6 +9,7 @@ import { AuthGuard } from 'src/app/core/auth/auth.guard';
 export class CategoriaComponent implements OnInit {
 
   @Input() categoria: any;
+  @Input() relatorio: any;
   usuario: any;
 
   constructor(private authService: AuthGuard) { }

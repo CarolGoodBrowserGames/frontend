@@ -1,4 +1,4 @@
 <li class="list-group-item"  style="cursor: pointer; height: 50px;">
    <span class="float-left"> #{{categoria.nome}}</span> 
-   <span *ngIf="usuario.ehAdmin === 'true'" class="text-info float-right"> Editar </span>
+   <span *ngIf="usuario.ehAdmin === 'true' && relatorio === false" class="text-info float-right"> Editar </span>
 </li>
