@@ -1,11 +1,8 @@
-<div class="card m-2">
-    <div class="card-body ">
-        <h5 class="card-title">Categorias</h5>
-        
-        <div class="row">
-            <ul *ngFor="let item of listaCategorias" class="list-group mx-2 col-12">
-                <app-categoria [categoria]="item" [relatorio]="true"></app-categoria>
-            </ul>
-        </div>
+<p>Categorias com mais avaliações</p>
+<div class=" ">
+    <div class="row">
+        <ul *ngFor="let item of listaCategorias" class="list-group mx-2 col-12">
+            <app-categoria [categoria]="item" [relatorio]="true"></app-categoria>
+        </ul>
     </div>
 </div>
