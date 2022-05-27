@@ -51,7 +51,8 @@ export class AtualizarPerfilComponent implements OnInit {
       email: this.usuario.email,
       ehAdmin: this.usuario.ehAdmin === null ? 'false' : this.usuario.ehAdmin,
       jogos: this.usuario.jogos,      
-    }  
+      qtdJogosAvaliados: this.usuario.qtdJogosAvaliados  === 0 ? this.usuario.jogosAvaliados?.length : this.usuario.qtdJogosAvaliados,
+    } 
 
     //console.log(payload);    
 
